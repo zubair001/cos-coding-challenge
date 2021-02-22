@@ -22,7 +22,7 @@ Your Resources:
 You can find the Swagger documentation of our REST API here (The „Authorize“ feature of Swagger is not working with our API):
 https://api-core-dev.caronsale.de/swagger/#/
 
-The base URL of our REST service is ``https://api-core-dev.caronsale.de/api/v1``.
+The base URL of our REST service is <https://api-core-dev.caronsale.de/api/v1>.
 
 
 General Hints:
@@ -37,4 +37,4 @@ General Hints:
 
 Please send the link to the forked repo to coding-challenge@caronsale.de.
 
-If you have any questions, feel free to contact us via coding-challenge@caronsale.de
+If you have any questions, feel free to contact us via <coding-challenge@caronsale.de>
