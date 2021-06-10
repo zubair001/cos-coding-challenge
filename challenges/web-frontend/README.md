@@ -6,7 +6,7 @@ To assess your skills and knowledge about the relevant technologies, we want you
 
 Your Task:
 
-Build a simple Angular (v6 or v7) application that includes:
+Build a simple Angular (v7 - v12 or latest) application that includes:
 - Login Page to login registered buyers („salesman“ or "buyer" users). If a Non-Buyer registers, an error message should pop up.
 - Overview Page (only for logged in buyers) to display all running auctions (updated every 20 seconds), including
    - vehicle image thumbnail (vehicle images may not show actual vehicles cars on our DEV platform, but only test images)
@@ -16,6 +16,9 @@ Build a simple Angular (v6 or v7) application that includes:
    - information whether the logged in buyer is the highest bidder on an auction
    
 Please fork the repo and create the Angular project in the directory of this README.
+
+Note that the solution must be coded in Angular, as this is the framework we are using internally. 
+No previous professional experience with Angular will be consider when checking the results, of course :)
 
 Your Resources:
 
