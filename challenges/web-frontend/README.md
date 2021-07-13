@@ -7,8 +7,8 @@ To assess your skills and knowledge about the relevant technologies, we want you
 ## Your Task:
 
 Build a simple Angular (v7 - v12 or latest) application that includes:
-- Login Page to login registered buyers („salesman“ or "buyer" users). If a Non-Buyer registers, an error message should pop up.
-- Overview Page (only for logged in buyers) to display all running auctions (updated every 20 seconds), including
+- **Login Page to login registered buyers** (also known as „salesman“). Note that if a Non-Buyer registers, an error message should pop up.
+- **Overview Page (only for logged in buyers) to display all running auctions (updated every 20 seconds)**, including
    - vehicle image thumbnail (vehicle images may not show actual vehicles cars on our DEV platform, but only test images)
    - basic vehicle information („Erstzulassung“/EZ, Mileage, Fuel Type, Transmission)
    - current highest bid value in Euro
@@ -40,7 +40,7 @@ The base URL of our REST service is <https://api-core-dev.caronsale.de/api/v1>.
    - Seller User:
       - dealership@alwaysAvailable.com (PW: test123)
 - The authentication process is part of the challenge, please use any `authentication` endpoint in the "Authentication" section in our Swagger you may consider.
-- Once authenticated use any `buyer` endpoint in the "Auctions" section you may consider. This will offer you automatically a set of auctions filtered for this user.
+- Once authenticated use any `buyer` endpoint in the "Auctions" section you may consider. This will offer you automatically a set of auctions filtered for this user (don't use a `public` endpoint, as it will show you only a set of public auctions not connected to the logged in user).
 
 Please send the link to the forked repo to coding-challenge@caronsale.de.
 
