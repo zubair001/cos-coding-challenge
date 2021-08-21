@@ -56,4 +56,16 @@ export class LoginService {
     );
     return response;
   }
+  public logout() {
+    const emptyUser: User = {
+      internalUserId: "",
+      userId: "",
+      type: "",
+      token: "",
+      internalUserUUID: "",
+      authenticated: false,
+    };
+    localStorage.removeItem("currentUser");
+    this.currentUserSubject.next(emptyUser);
+  }
 }

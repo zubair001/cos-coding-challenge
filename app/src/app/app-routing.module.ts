@@ -5,6 +5,7 @@ import { OverviewComponent } from "./components/overview/overview.component";
 import { AuthGuard } from "./lib/auth.guard";
 
 const routes: Routes = [
+  { path: "", component: LoginPageComponent },
   { path: "login", component: LoginPageComponent },
   { path: "overview", component: OverviewComponent, canActivate: [AuthGuard] },
 ];
