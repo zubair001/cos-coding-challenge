@@ -28,11 +28,12 @@ export class LoginPageComponent implements OnInit {
   constructor(private loginService: LoginService, private router: Router) {}
 
   ngOnInit(): void {}
-  login() {
-    const response: ApiResponse = this.loginService.authenticateUser(
+  async login() {
+    const response: ApiResponse = await this.loginService.authenticateUser(
       this.user.userId,
       this.password
     );
+    console.log(JSON.stringify(response));
     if (!response.isError) {
       console.log("no error I will route to new page");
       this.router.navigate(["overview"]);

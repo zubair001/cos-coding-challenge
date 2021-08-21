@@ -38,24 +38,32 @@ export class LoginService {
     });
   }
 
-  public authenticateUser(userId: string, password: string): ApiResponse {
+  public authenticateUser(
+    userId: string,
+    password: string
+  ): Promise<ApiResponse> {
     let response: ApiResponse = {
       isError: false,
     };
 
-    this.authenticate(userId, password).subscribe(
-      (user) => {
-        localStorage.setItem("currentUser", JSON.stringify(user));
-        this.currentUserSubject.next(user);
-        response.data = user;
-      },
-      (error) => {
-        response.isError = true;
-        response.errorMsg = error;
-      }
-    );
-    return response;
+    return new Promise((resolve) => {
+      this.authenticate(userId, password).subscribe(
+        (user) => {
+          localStorage.setItem("currentUser", JSON.stringify(user));
+          this.currentUserSubject.next(user);
+          response.data = user;
+          resolve(response);
+        },
+        (error) => {
+          console.log("inside error");
+          response.isError = true;
+          response.errorMsg = error;
+          resolve(response);
+        }
+      );
+    });
   }
+
   public logout() {
     const emptyUser: User = {
       internalUserId: "",
