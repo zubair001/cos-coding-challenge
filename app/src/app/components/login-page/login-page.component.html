@@ -9,10 +9,10 @@
           class="form-control"
           id="username"
           required
-          [(ngModel)]="user.email"
           name="username"
+          [(ngModel)]="user.userId"
         />
-        <div [hidden]="user.email !== ''" class="alert alert-danger">
+        <div [hidden]="user.userId !== ''" class="alert alert-danger">
           Name is required
         </div>
       </div>

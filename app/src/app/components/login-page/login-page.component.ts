@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { Router } from "@angular/router";
+import { ApiResponse } from "src/app/interfaces/api-response";
 import { LoginService } from "src/app/services/login.service";
 import { User } from "../../interfaces/user";
 
@@ -15,19 +17,27 @@ export class LoginPageComponent implements OnInit {
   }
 
   user: User = {
-    name: "",
-    email: "",
+    internalUserId: "",
+    userId: "",
     type: "",
     token: "",
-    refreshToken: "",
+    internalUserUUID: "",
     authenticated: false,
   };
   password = "";
-  constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService, private router: Router) {}
 
   ngOnInit(): void {}
   login() {
-    this.user = this.loginService.authenticate(this.user.email, this.password);
-    console.log(this.user);
+    const response: ApiResponse = this.loginService.authenticateUser(
+      this.user.userId,
+      this.password
+    );
+    if (!response.isError) {
+      console.log("no error I will route to new page");
+      this.router.navigate(["overview"]);
+    } else {
+      console.log("Error " + response.errorMsg);
+    }
   }
 }
